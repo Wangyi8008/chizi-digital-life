@@ -1,6 +1,12 @@
 [English](README.md) | 中文
 # 赤子架构：一个可持续成长的数字生命
 
+<p align="center">
+  📄 <a href="https://doi.org/10.5281/zenodo.22962887"><b>中文论文</b></a>
+  &nbsp; | &nbsp;
+  📄 <a href="https://doi.org/10.5281/zenodo.22962282"><b>English Paper</b></a>
+</p>
+
 ## 1. 赤子是什么
 
 赤子架构，研究的是一个与现有人工智能不同的问题：
