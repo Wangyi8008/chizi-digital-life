@@ -1,6 +1,12 @@
 English | [中文](README_CN.md)
 # The Chizi Architecture: A Continuously Growing Digital Life
 
+<p align="center">
+  📄 <a href="https://doi.org/10.5281/zenodo.22962282"><b>English Paper</b></a>
+  &nbsp; | &nbsp;
+  📄 <a href="https://doi.org/10.5281/zenodo.22962887"><b>中文论文</b></a>
+</p>
+
 ## 1. What Chizi Is
 
 The Chizi architecture studies a question different from that of existing artificial intelligence:
