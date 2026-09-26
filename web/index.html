@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chizi Digital Life 1.0</title>
+<style>
+:root{--ink:#16202a;--dim:#5d6b78;--line:#dfe5ea;--bg:#fbfcfd;--accent:#1d6f8b}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{padding:22px 26px 14px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 4px;font-size:19px}
+.sub{color:var(--dim);font-size:13px}
+nav a{margin-right:14px;color:var(--accent);text-decoration:none;font-size:13px}
+main{padding:20px 26px 60px;max-width:900px}
+section{border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:16px;background:#fff}
+h2{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--dim)}
+pre{background:#f4f7f9;border:1px solid var(--line);border-radius:5px;padding:10px;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap}
+a.big{display:inline-block;margin-right:12px;padding:10px 16px;border:1px solid var(--accent);border-radius:6px;color:var(--accent);text-decoration:none;font-size:14px}
+ul{font-size:14px;padding-left:20px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Chizi Digital Life 1.0</h1>
+  <div class="sub">One Life, two pages. Both work on the same living thing &mdash; never two lives.</div>
+</header>
+<main>
+  <section>
+    <h2>Open a page</h2>
+    <a class="big" href="/grow/">Growth / Teaching</a>
+    <a class="big" href="/talk/">Dialogue / Interaction</a>
+  </section>
+
+  <section>
+    <h2>Growth / Teaching</h2>
+    <ul>
+      <li>Build a blank Chizi.</li>
+      <li>Give it reality (a frame of channel values, and how much they change each moment).</li>
+      <li>Give it a language form, if you want one.</li>
+      <li>Run it for a number of moments, and look at what it holds: age, connections, elements, structures.</li>
+      <li>Save it, and load it back later.</li>
+    </ul>
+    <p class="sub">The teacher may provide external reality and language forms. The page never makes elements,
+    connections or structures for the Life, and it never writes into the Life's own tables &mdash; those are
+    formed by the Life itself, out of what it is given, or not at all.</p>
+  </section>
+
+  <section>
+    <h2>Dialogue / Interaction</h2>
+    <ul>
+      <li>Give it a language form, and see what it really says back.</li>
+    </ul>
+    <p class="sub">Recalling existing knowledge from a language form, and answering, are not yet verified to hold
+    in Chizi 1.0: at present <code>express()</code> returns nothing for the forms given here, and the page shows
+    exactly that. An empty answer is this Life&rsquo;s own present reading, not a statement that no recall can
+    ever form. There is no keyword matching, no canned reply and no language model behind it.</p>
+    <p class="sub">A life saved here goes to <code>web/runtime/</code>. No life comes with the sources: anyone
+    who downloads this starts from a blank Chizi.</p>
+  </section>
+
+  <section>
+    <h2>From the command line</h2>
+    <pre>python run_chizi.py        # run a blank Chizi for a few moments
+python web/server.py      # this interface, at http://127.0.0.1:8765/</pre>
+  </section>
+</main>
+</body>
+</html>

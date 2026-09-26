@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dialogue / Interaction &mdash; Chizi Digital Life 1.0</title>
+<style>
+:root{--ink:#16202a;--dim:#5d6b78;--line:#dfe5ea;--bg:#fbfcfd;--accent:#1d6f8b}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{padding:22px 26px 14px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 4px;font-size:19px}
+.sub{color:var(--dim);font-size:13px}
+nav a{margin-right:14px;color:var(--accent);text-decoration:none;font-size:13px}
+main{padding:20px 26px 60px;max-width:900px}
+section{border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:16px;background:#fff}
+h2{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--dim)}
+label{display:block;font-size:13px;color:var(--dim);margin:10px 0 4px}
+input[type=text]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:5px;font:14px/1.4 ui-monospace,Menlo,Consolas,monospace}
+button{padding:8px 14px;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:5px;font-size:13px;cursor:pointer}
+.row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.row>div{flex:1 1 260px}
+pre{background:#f4f7f9;border:1px solid var(--line);border-radius:5px;padding:10px;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;margin:0}
+.hint{color:var(--dim);font-size:12.5px;margin-top:8px}
+.warn{color:#9a5b00}
+.reply{border-left:3px solid var(--accent);padding:10px 0 10px 14px;margin:0;font:18px/1.5 ui-monospace,Menlo,Consolas,monospace;min-height:28px}
+table.kv{border-collapse:collapse;font-size:14px}
+table.kv td{padding:3px 18px 3px 0}
+table.kv td:first-child{color:var(--dim)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Dialogue / Interaction</h1>
+  <div class="sub">One Life, two pages. <a href="/">home</a> &middot; <a href="/grow/">Growth / Teaching</a></div>
+</header>
+<main>
+  <section>
+    <h2>Say something to it</h2>
+    <div class="row">
+      <div>
+        <label for="text">a language form &mdash; one language form per moment</label>
+        <input id="text" type="text" value="hello" autofocus>
+      </div>
+      <div style="flex:0 1 120px"><button id="send">Send</button></div>
+    </div>
+    <label for="frame">reality standing beside it &mdash; one number per channel, comma separated</label>
+    <input id="frame" type="text" value="0, 0, 0, 0, 0, 0">
+    <p class="hint">This is the whole of what the page does: hand the form and the reality to the Life, and show
+    what the Life really does with it. Nothing is interpreted on its behalf.</p>
+  </section>
+
+  <section>
+    <h2>What it says back</h2>
+    <p class="reply" id="reply">(nothing)</p>
+    <p class="hint" id="why">This is the real answer of <code>express()</code>: the organ only speaks in forms the
+    Life has really met, and only while a formed organisation that carries one is running. Recalling existing
+    knowledge from a language form, and answering, are not yet verified to hold in Chizi 1.0 &mdash; an empty
+    answer here is this Life&rsquo;s own present reading, not a statement that no recall can ever form. There is
+    no keyword matching, no canned reply and no language model here.</p>
+  </section>
+
+  <section>
+    <h2>What it is holding now</h2>
+    <table class="kv" id="kv"><tr><td>age</td><td>0</td></tr></table>
+    <label>action &mdash; what the whole Life is letting out</label>
+    <pre id="action">[]</pre>
+    <label>LAS &mdash; the real structure shown for this moment</label>
+    <pre id="las">{}</pre>
+  </section>
+
+  <p class="hint" id="msg"></p>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+function msg(text, warn) {
+  $('msg').textContent = text || '';
+  $('msg').className = warn ? 'hint warn' : 'hint';
+}
+async function api(path, body) {
+  const opt = body ? {method: 'POST', headers: {'Content-Type': 'application/json'},
+                      body: JSON.stringify(body)} : {};
+  const res = await fetch(path, opt);
+  const data = await res.json();
+  if (data.error) throw new Error(data.error);
+  return data;
+}
+function render(state) {
+  const rows = [['age', state.age], ['channels', state.channels],
+                ['connections', state.connections], ['elements', state.elements],
+                ['structures', state.structures]];
+  $('kv').innerHTML = rows.map(function (r) {
+    return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>';
+  }).join('');
+  $('action').textContent = JSON.stringify(state.action);
+  $('las').textContent = JSON.stringify(state.las, null, 1);
+  const said = (state.says && state.says.length) ? state.says.join(' ') : '(nothing)';
+  $('reply').textContent = said;
+}
+async function refresh() {
+  try { render((await api('/api/state'))); } catch (e) { msg(e.message, true); }
+}
+$('send').onclick = async function () {
+  const text = $('text').value;
+  if (!text) { return msg('give it a form first.', true); }
+  try {
+    const d = await api('/api/say', {text: text, frame: $('frame').value});
+    render(d.state);
+    msg('gave it "' + text + '" — one language form per moment.');
+  } catch (e) { msg(e.message, true); }
+};
+$('text').addEventListener('keydown', function (ev) {
+  if (ev.key === 'Enter') { $('send').click(); }
+});
+refresh();
+</script>
+</body>
+</html>
