@@ -1,3 +1,4 @@
+English | [中文](README_CN.md)
 # The Chizi Architecture: A Continuously Growing Digital Life
 
 ## 1. What Chizi Is
@@ -39,6 +40,10 @@ Reality → Cognition formed in the past → LAS revealing → Three-state judgm
 ```
 
 The two lines are not two separate systems: the developmental line determines what capabilities it has at this moment, while the running line uses those capabilities at every moment and writes the results back into this life. Sections 3 to 5 below unfold these two lines respectively.
+
+<p align="center">
+  <img src="assets/Fig1_Overall_Architecture_of_Chizi.png" width="800">
+</p>
 
 ## 3. How Chizi Grows Out
 
@@ -97,6 +102,10 @@ Reality enters
 → In the next moment reality continues to enter, and the cycle happens again
 ```
 
+<p align="center">
+  <img src="assets/Fig2_Running_and_Growth_Loop.png" width="800">
+</p>
+
 Two key roles here are:
 
 LAS (Linkage Analysis System) is responsible for "seeing clearly what structure actually exists right now." It reveals the elements, connections, and structures actually participating in this moment, along with the current state of each connection. It does not add in relations that have not appeared, nor does it decide for Chizi what reality should become.
@@ -131,6 +140,10 @@ Therefore a blank Chizi that has just begun to grow first goes through a period 
 
 For example, when learning language, Chizi does not initially rely on "this is a noun, this is a verb, this is an adjective" to understand a sentence. What it cares about more is: what elements are here, what connections exist among them, and what structure these connections jointly form. Grammatical categories may form later, but they are not Chizi's most fundamental way of knowing.
 
+<p align="center">
+  <img src="assets/Fig3_Formation_of_Language_Through_Experience.png" width="800">
+</p>
+
 Chizi's learning therefore falls into two stages:
 
 Stage one, foundational learning: material organized in terms of elements, connections, and structures is used, so that Chizi gradually builds the most basic ability to distinguish structures. The purpose of this stage is not only to have it remember this material, but to have it gradually learn "how to see."
@@ -163,6 +176,10 @@ This section clearly separates two things: what has been verified, and what has 
 - Structural recursion: a structure that has been formed can keep its own identity, reappear later, and continue to participate as an element in a larger structure.
 - Language learning and expression under teaching conditions: a language form can enter Chizi through experience, and can be brought out through the expression outlet when the corresponding cognition runs.
 - Preliminary self-related cognition: Chizi itself enters cognition as a participant in reality, and can already form associations related to the "self."
+
+<p align="center">
+  <img src="assets/Fig4_Formation_of_Self_Related_Cognition.png" width="800">
+</p>
 
 **Not yet verified:**
 
@@ -215,6 +232,10 @@ The measurement environment for Chizi is an ordinary Windows machine: CPU: AMD R
 Testing shows that Chizi's computational organization is clearly CPU-dominated: the formal life run occupies roughly one CPU core overall and does not depend on the GPU; the current life and the history organization already loaded into it are kept in RAM, occupying a few tens of MB during stable running across multiple experimental scales; the complete life state can be saved to SSD and loaded again on the next run.
 
 It can therefore be confirmed that the GPU is not a computational resource required for Chizi to come into being and continue running. If a GPU parallel path is added in the future, it may become an acceleration layer for separate study, but this is not a capability verified in the current version. (The test data are described in detail in the paper, or you may test it yourself after downloading the Chizi architecture.)
+
+<p align="center">
+  <img src="assets/Fig5_Computational_Organization.png" width="800">
+</p>
 
 ### Repository Contents
 
