@@ -2,9 +2,9 @@ English | [中文](README_CN.md)
 # The Chizi Architecture: A Continuously Growing Digital Life
 
 <p align="center">
-  📄 <a href="https://doi.org/10.5281/zenodo.22962282"><b>English Paper</b></a>
+  📄 <a href="https://doi.org/10.5281/zenodo.23004790"><b>English Paper</b></a>
   &nbsp; | &nbsp;
-  📄 <a href="https://doi.org/10.5281/zenodo.22962887"><b>中文论文</b></a>
+  📄 <a href="https://doi.org/10.5281/zenodo.23005070"><b>中文论文</b></a>
 </p>
 
 ## 1. What Chizi Is
@@ -27,7 +27,7 @@ Take humans as an example: every second we continuously take in new information 
 
 What the Chizi architecture seeks to explore is precisely this possibility:
 
-Rather than first training a "smart AI" and then putting it to work, it first lets a digital life continue to exist, and then lets cognition, memory, knowledge, thinking, and expression grow slowly out of its own experience.
+It first lets a digital life continue to exist, and then lets cognition, memory, knowledge, thinking, and expression grow slowly out of its own experience.
 
 ## 2. The Overall Architecture of Chizi
 
@@ -266,17 +266,17 @@ The core implementation is concentrated in life_growth.py. Together, dna.py, lif
 
 Chizi's complete architecture, implementation process, experimental results, and current boundaries have been organized into papers in Chinese and English.
 
-English: Chizi Architecture: A Continuously Growing Digital Life Architecture
+English: Chizi Architecture: A Continuously Growing Digital Life Architecture_v1.1
 
-DOI: 10.5281/zenodo.22962282
+DOI: 10.5281/zenodo.23004790
 
-https://doi.org/10.5281/zenodo.22962282
+https://doi.org/10.5281/zenodo.23004790
 
-Chinese: 《赤子架构：一种持续成长的数字生命架构》 (The Chizi Architecture: A Continuously Growing Digital Life Architecture)
+Chinese: 赤子架构：一种持续成长的数字生命架构_v1.1 (The Chizi Architecture: A Continuously Growing Digital Life Architecture)
 
-DOI: 10.5281/zenodo.22962887
+DOI: 10.5281/zenodo.23005070
 
-https://doi.org/10.5281/zenodo.22962887
+https://doi.org/10.5281/zenodo.23005070
 
 If you want to understand why Chizi adopts this architecture, how its parts relate to one another, and where it has actually been verified so far, you can read the papers directly.
 
