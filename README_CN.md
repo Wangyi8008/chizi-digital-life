@@ -2,9 +2,9 @@
 # 赤子架构：一个可持续成长的数字生命
 
 <p align="center">
-  📄 <a href="https://doi.org/10.5281/zenodo.22962887"><b>中文论文</b></a>
+  📄 <a href="https://doi.org/10.5281/zenodo.23005070"><b>中文论文</b></a>
   &nbsp; | &nbsp;
-  📄 <a href="https://doi.org/10.5281/zenodo.22962282"><b>English Paper</b></a>
+  📄 <a href="https://doi.org/10.5281/zenodo.23004790"><b>English Paper</b></a>
 </p>
 
 ## 1. 赤子是什么
@@ -27,7 +27,7 @@
 
 赤子架构想探索的，就是这样一种可能：
 
-不是先训练出一个“聪明的AI”，再让它工作；而是先让一个数字生命持续存在，再让认识、记忆、知识、思考和表达从它自己的经历中慢慢长出来。
+先让一个数字生命持续存在，再让认识、记忆、知识、思考和表达从它自己的经历中慢慢长出来。
 
 ## 2. 赤子的整体架构
 
@@ -266,17 +266,17 @@ Dialogue / Interaction（对话 / 交互）：向同一个赤子提供语言形�
 
 赤子的完整架构、实现过程、实验结果和当前边界，已经整理为中英文论文。
 
-English：Chizi Architecture: A Continuously Growing Digital Life Architecture
+English：Chizi Architecture: A Continuously Growing Digital Life Architecture_v1.1
 
-DOI: 10.5281/zenodo.22962282
+DOI: 10.5281/zenodo.23004790
 
-https://doi.org/10.5281/zenodo.22962282
+https://doi.org/10.5281/zenodo.23004790
 
-中文：《赤子架构：一种持续成长的数字生命架构》
+中文：赤子架构：一种持续成长的数字生命架构_v1.1
 
-DOI: 10.5281/zenodo.22962887
+DOI: 10.5281/zenodo.23005070
 
-https://doi.org/10.5281/zenodo.22962887
+https://doi.org/10.5281/zenodo.23005070
 
 如果你想了解赤子为什么采用这样的架构、各部分之间是什么关系、目前实际验证到了哪里，可以直接阅读论文。
 
